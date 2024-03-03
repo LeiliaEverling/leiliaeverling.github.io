@@ -67,8 +67,8 @@ export function Tree(data, MAX_DEPTH) {
   
     const gLink = svg.append("g")
         .attr("fill", "none")
-        .attr("stroke-opacity", 0.4)
-        .attr("stroke-width", 1.5);
+        .attr("stroke-opacity", 0.8)
+        .attr("stroke-width", 3);
   
     const gNode = svg.append("g")
         .attr("cursor", "pointer")
@@ -99,19 +99,19 @@ export function Tree(data, MAX_DEPTH) {
 
         // Three function that change the tooltip when user hover / move / leave a cell
         var mouseover = function(d) {
-        Tooltip
-            .style("opacity", 1)
-            .style("visibility", "visible")
+            Tooltip
+                .style("opacity", 1)
+                .style("visibility", "visible")
         }
 
         var mousemove = function(d) {
-        let node_data = d.target.__data__.data;
-        let status = node_data.type ? node_data.type : "Available";
+            let node_data = d.target.__data__.data;
+            let status = node_data.type ? node_data.type : "Available";
 
-        Tooltip
-            .html("Path Type: " + status)
-            .style("left", (d.x+70) + "px")
-            .style("top", (d.y) + "px")
+            Tooltip
+                .html("Path Type: " + status)
+                .style("left", (d.pageX+70) + "px")
+                .style("top", (d.pageY) + "px")
         }
         
         var mouseleave = function(d) {
@@ -132,9 +132,21 @@ export function Tree(data, MAX_DEPTH) {
   
         nodeEnter.append("circle")
             .attr("r", 10)
-            .attr("fill", d =>  d.data.type ? COLORS[d.data.type] : COLORS["Available"])
+            .attr("fill", function(d) {
+                if (d.data.path == true) {
+                    return COLORS["Current Path"];
+                } else {
+                    return d.data.type ? COLORS[d.data.type] : COLORS["Available"]
+                }
+            })
             .attr("fill-opacity", 0.8)
-            .attr("stroke", d =>  d.data.type ? COLORS[d.data.type] : COLORS["Available"])
+            .attr("stroke", function(d) {
+                if (d.data.path == true) {
+                    return COLORS["Current Path"];
+                } else {
+                    return d.data.type ? COLORS[d.data.type] : COLORS["Available"]
+                }
+            })
             .attr("stroke-width", 2)
             .attr("stroke-opacity", 1)
             .on("click", (event, d) => {
@@ -192,10 +204,11 @@ export function Tree(data, MAX_DEPTH) {
         // Transition links to their new position.
         link.merge(linkEnter).transition(transition)
             .attr("stroke", function(d) {
-                if (d.source.data.path == true) {
-
+                if (d.source.data.path == true && d.target.data.path == true) {
+                    return COLORS["Current Path"]
+                } else {
+                    return d.source.data.type ? COLORS[d.source.data.type] : "#EEE"
                 }
-                d.source.data.type ? COLORS[d.source.data.type] : "#EEE"
             })
             .attr("d", diagonal);
   
