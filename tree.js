@@ -30,7 +30,7 @@ const Tooltip = d3.select("body")
 
 export function Tree(data, MAX_DEPTH) {
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
-    const width = 300 * MAX_DEPTH;
+    const width = 300 * (MAX_DEPTH + 1);
     const marginTop = 100;
     const marginRight = 10;
     const marginBottom = 30;
@@ -107,9 +107,19 @@ export function Tree(data, MAX_DEPTH) {
         var mousemove = function(d) {
             let node_data = d.target.__data__.data;
             let status = node_data.type ? node_data.type : "Available";
+            let descision = node_data.decision ? node_data.decision : "";
+            let description = node_data.description ? node_data.description : "";
+            let rating = node_data.rating ? node_data.rating : "Not Rated";
+            let warnings = node_data.warnings ? node_data.warnings : "None";
 
             Tooltip
-                .html("Path Type: " + status)
+                .html(`
+                    Description: ${description}<br>
+                    Decision: ${descision}<br>
+                    Rating: ${rating}<br>
+                    Warnings: ${warnings}<br>
+                    Path Type: ${status}<br>
+                `)
                 .style("left", (d.pageX+30) + "px")
                 .style("top", (d.pageY) + "px")
         }
@@ -156,7 +166,6 @@ export function Tree(data, MAX_DEPTH) {
   
         const nodeLink = nodeEnter.append("a")
             .attr("href", d => formatURL(d.data.work, d.data.chapter))
-            .attr("target", "_blank")
       
         nodeLink.append("text")
             .attr("width", "100%")
