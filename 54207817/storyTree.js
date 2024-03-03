@@ -14,7 +14,18 @@ export default {
                     "name": "Take The Knife",
                     "work": 54207817,
                     "chapter": 3,
-                    "type": "Work In Progress"
+                    "type": "Warnings Apply",
+                    "children": [
+                        {
+                            "name": "Stab Them",
+                            "work": 54207817,
+                            "chapter": 10,
+                            "type": "Warnings Apply",
+                            "children": [
+                                
+                            ]
+                        },
+                    ]
                 },
                 {
                     "name": "Take Their Hand",
@@ -34,55 +45,7 @@ export default {
                             "chapter": 7,
                             "type": "Available",
                             "children": [
-                                {
-                                    "name": "Kiss Them Anyway",
-                                    "work": 54207817,
-                                    "chapter": 9,
-                                    "type": "Available",
-                                    "children": [
-                                        {
-                                            "name": "Death",
-                                            "work": 54207817,
-                                            "chapter": 10,
-                                            "type": "Available",
-                                            "children": [
-                                                {
-                                                    "name": "Kiss Them Anyway",
-                                                    "work": 54207817,
-                                                    "chapter": 9,
-                                                    "type": "Available",
-                                                    "children": [
-                                                        {
-                                                            "name": "Kiss Them Anyway",
-                                                            "work": 54207817,
-                                                            "chapter": 9,
-                                                            "type": "Available",
-                                                            "children": [
-                                                                {
-                                                                    "name": "Kiss Them Anyway",
-                                                                    "work": 54207817,
-                                                                    "chapter": 9,
-                                                                    "type": "Available",
-                                                                    "children": [
-                                                                        {
-                                                                            "name": "Kiss Them Anyway",
-                                                                            "work": 54207817,
-                                                                            "chapter": 9,
-                                                                            "type": "Available",
-                                                                            "children": [
-                                                                                
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
+
                             ]
                         },
                         {
