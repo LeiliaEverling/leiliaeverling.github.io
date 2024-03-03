@@ -1,17 +1,19 @@
 export default {
     "name": "Launch Pad",
+    "chapter": 137264779,
+    "type": "Info",
     "children": [
         {
-            "name": "Decision 2"
-        },
-        {
-            "name": "Decision 3",
+            "name": "Decision 2",
             "children": [
                 {
                     "name": "Ending"
                 }
             ]
+        },
+        {
+            "name": "Decision 3",
+            "chapter": 137264944,
         }
     ],
-    "type": "Info"
 }

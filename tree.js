@@ -1,6 +1,22 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-import treeData from "./storyTree.js";
-import { COLORS, MAX_DEPTH } from "./storyTreeAttributes.js";
+import { COLORS } from "./storyTreeAttributes.js";
+
+const Url = {
+    get get(){
+        var vars= {};
+        if(window.location.search.length!==0)
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value){
+                key=decodeURIComponent(key);
+                if(typeof vars[key]==="undefined") {vars[key]= decodeURIComponent(value);}
+                else {vars[key]= [].concat(vars[key], decodeURIComponent(value));}
+            });
+        return vars;
+    }
+};
+
+function formatURL(work, chapter) {
+    return `https://archiveofourown.org/works/${work}/chapters/${chapter}`;
+}
 
 const Tooltip = d3.select("body")
     .append("div")
@@ -12,7 +28,7 @@ const Tooltip = d3.select("body")
     .style("border-radius", "5px")
     .style("padding", "5px")
 
-function Tree(data) {
+export function Tree(data, MAX_DEPTH) {
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
     const width = 300 * MAX_DEPTH;
     const marginTop = 30;
@@ -127,7 +143,7 @@ function Tree(data) {
             });
   
         const nodeLink = nodeEnter.append("a")
-            .attr("href", "https://google.com")
+            .attr("href", d => formatURL(d.data.work, d.data.chapter))
             .attr("target", "_blank")
       
         nodeLink.append("text")
@@ -175,7 +191,12 @@ function Tree(data) {
   
         // Transition links to their new position.
         link.merge(linkEnter).transition(transition)
-            .attr("stroke", d => d.source.data.type ? COLORS[d.source.data.type] : "#EEE")
+            .attr("stroke", function(d) {
+                if (d.source.data.path == true) {
+
+                }
+                d.source.data.type ? COLORS[d.source.data.type] : "#EEE"
+            })
             .attr("d", diagonal);
   
         // Transition exiting nodes to the parent's new position.
@@ -196,10 +217,19 @@ function Tree(data) {
     // are open (arbitrarily selected as the root, plus nodes with 7 letters).
     root.x0 = dy / 2;
     root.y0 = 0;
+
+    let chapter = Url.get.chapter;
+    if (chapter) {
+        let chapter_node = root.descendants().find(descendant => descendant.data.chapter == chapter);
+        var path_chapters = root.path(chapter_node).map(node => node.data.chapter);
+        path_chapters.push(chapter);
+    }
+
     root.descendants().forEach((d, i) => {
         d.id = i;
         d._children = d.children;
-        // if (d.depth && d.data.name.length !== 7) d.children = null;
+        if (chapter && !path_chapters.find(p_chapter => p_chapter == d.data.chapter)) d.children = null;
+        if (chapter && path_chapters.find(p_chapter => p_chapter == d.data.chapter)) d.data.path = true;
     });
   
     update(null, root);
@@ -215,7 +245,7 @@ const yOffset = 12;
 const legend = d3
     .select('#legend')
     .append('svg')
-        .attr("height", "120")
+        .attr("height", "145")
         .selectAll('.legendItem')
         .data(Object.keys(COLORS).map(function (key) {
             return [key, COLORS[key]]
@@ -253,5 +283,3 @@ legend
     .attr('x', xOffset + legendItemSize)
     .attr('y', (d, i) => yOffset + (legendItemSize + legendSpacing) * i + 12)
     .text(d => d[0]); 
-
-Tree(treeData)
