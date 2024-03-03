@@ -2,6 +2,32 @@ body {
     background-color: #0B0C10;
 }
 
+#header {
+    color: white;
+    font-family: sans-serif;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+#header > span {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 24pt;
+}
+
+#subheader {
+    color: white;
+    font-family: sans-serif;
+    position: fixed;
+    top: 30px;
+    left: 5px;
+}
+
+#subheader > a > img {
+    width: 35px;
+}
+
 .tooltip {
     position: absolute;
     font-size: 10pt;

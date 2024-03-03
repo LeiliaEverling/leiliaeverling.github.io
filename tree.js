@@ -110,7 +110,7 @@ export function Tree(data, MAX_DEPTH) {
 
             Tooltip
                 .html("Path Type: " + status)
-                .style("left", (d.pageX+70) + "px")
+                .style("left", (d.pageX+30) + "px")
                 .style("top", (d.pageY) + "px")
         }
         
@@ -166,11 +166,11 @@ export function Tree(data, MAX_DEPTH) {
             .text(d => d.data.name)
             .attr("fill", "#FFF")
             .attr("stroke-linejoin", "round")
-            .attr("stroke-width", 2)
+            .attr("stroke-width", 3)
             .attr("stroke", "#0B0C10")
             .attr("paint-order", "stroke")
             .attr("text-decoration", "underline")
-            .attr("text-underline-position", "under")
+            .style("text-underline-offset", "2px")
             .each(wrap);
 
         nodeEnter

@@ -1,10 +1,12 @@
 export default {
     "name": "Launch Pad",
+    "work": 54207817,
     "chapter": 137264779,
     "type": "Info",
     "children": [
         {
             "name": "Decision 2",
+            "work": 54207817,
             "children": [
                 {
                     "name": "Ending"
@@ -13,6 +15,7 @@ export default {
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
             "children": [
                 {
@@ -52,146 +55,87 @@ export default {
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         },
         {
             "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
+            "work": 54207817,
             "chapter": 137264944,
         }
     ],
