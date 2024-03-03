@@ -1,43 +1,79 @@
 export default {
     "name": "Launch Pad",
     "work": 54207817,
-    "chapter": 137264779,
+    "chapter": 1,
     "type": "Info",
     "children": [
         {
-            "name": "Decision 2",
+            "name": "Beginning",
             "work": 54207817,
+            "chapter": 2,
+            "type": "Available",
             "children": [
                 {
-                    "name": "Ending"
-                }
-            ]
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-            "children": [
+                    "name": "Take The Knife",
+                    "work": 54207817,
+                    "chapter": 3,
+                    "type": "Work In Progress"
+                },
                 {
-                    "name": "Ending",
+                    "name": "Take Their Hand",
+                    "work": 54207817,
+                    "chapter": 4,
+                    "type": "Available",
                     "children": [
                         {
-                            "name": "Ending",
+                            "name": "Kiss Them",
+                            "work": 54207817,
+                            "chapter": 5,
+                            "type": "Available",
+                        },
+                        {
+                            "name": "Punch Them",
+                            "work": 54207817,
+                            "chapter": 7,
+                            "type": "Available",
                             "children": [
                                 {
-                                    "name": "Ending",
+                                    "name": "Kiss Them Anyway",
+                                    "work": 54207817,
+                                    "chapter": 9,
+                                    "type": "Available",
                                     "children": [
                                         {
-                                            "name": "Ending",
+                                            "name": "Death",
+                                            "work": 54207817,
+                                            "chapter": 10,
+                                            "type": "Available",
                                             "children": [
                                                 {
-                                                    "name": "Ending",
+                                                    "name": "Kiss Them Anyway",
+                                                    "work": 54207817,
+                                                    "chapter": 9,
+                                                    "type": "Available",
                                                     "children": [
                                                         {
-                                                            "name": "Ending",
+                                                            "name": "Kiss Them Anyway",
+                                                            "work": 54207817,
+                                                            "chapter": 9,
+                                                            "type": "Available",
                                                             "children": [
                                                                 {
-                                                                    "name": "Ending"
+                                                                    "name": "Kiss Them Anyway",
+                                                                    "work": 54207817,
+                                                                    "chapter": 9,
+                                                                    "type": "Available",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Kiss Them Anyway",
+                                                                            "work": 54207817,
+                                                                            "chapter": 9,
+                                                                            "type": "Available",
+                                                                            "children": [
+                                                                                
+                                                                            ]
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         }
@@ -48,95 +84,16 @@ export default {
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "name": "Arm Wrestle Them",
+                            "work": 54207817,
+                            "chapter": 8,
+                            "type": "Available"
                         }
                     ]
                 }
             ]
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
-        },
-        {
-            "name": "Decision 3",
-            "work": 54207817,
-            "chapter": 137264944,
         }
-    ],
+    ]
 }

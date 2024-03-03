@@ -15,6 +15,6 @@ export const COLORS = {
     "Available": "#C5C6C7",
     "Info": "#66FCF1",
     "Warnings Apply": "#EE4C7C",
-    "Under Construction": "#FCCD04",
+    "Work In Progress": "#FCCD04",
     "Ending": "#14A76C"
 }

@@ -31,7 +31,7 @@ const Tooltip = d3.select("body")
 export function Tree(data, MAX_DEPTH) {
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
     const width = 300 * MAX_DEPTH;
-    const marginTop = 30;
+    const marginTop = 100;
     const marginRight = 10;
     const marginBottom = 30;
     const marginLeft = 120;
