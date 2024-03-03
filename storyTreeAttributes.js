@@ -16,8 +16,8 @@ export const MAX_DEPTH = addDepth(tree["children"], 1);
 
 export const COLORS = {
     "Available": "#C5C6C7",
-    "Start": "#66FCF1",
-    "Incomplete": "#EE4C7C",
+    "Info": "#66FCF1",
+    "Warnings Apply": "#EE4C7C",
     "Under Construction": "#FCCD04",
     "Ending": "#14A76C"
 }

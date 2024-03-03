@@ -1,5 +1,5 @@
 export default {
-    "name": "Intro",
+    "name": "Launch Pad",
     "children": [
         {
             "name": "Decision 2"
@@ -13,5 +13,5 @@ export default {
             ]
         }
     ],
-    "code": "Under Construction"
+    "type": "Info"
 }

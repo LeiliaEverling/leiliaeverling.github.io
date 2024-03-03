@@ -18,7 +18,7 @@ function Tree(data) {
     const marginTop = 30;
     const marginRight = 10;
     const marginBottom = 30;
-    const marginLeft = 80;
+    const marginLeft = 120;
 
     function wrap() {
         var self = d3.select(this),
@@ -43,7 +43,7 @@ function Tree(data) {
     const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
   
     // Create the SVG container, a layer for the links and a layer for the nodes.
-    const svg = d3.select("body").append("svg")
+    const svg = d3.select("#map").append("svg")
         .attr("width", width)
         .attr("height", dx)
         .attr("viewBox", [-marginLeft, -marginTop, width, dx])
@@ -90,10 +90,10 @@ function Tree(data) {
 
         var mousemove = function(d) {
         let node_data = d.target.__data__.data;
-        let status = node_data.code ? node_data.code : "Available";
+        let status = node_data.type ? node_data.type : "Available";
 
         Tooltip
-            .html("Path Status: " + status)
+            .html("Path Type: " + status)
             .style("left", (d.x+70) + "px")
             .style("top", (d.y) + "px")
         }
@@ -116,9 +116,9 @@ function Tree(data) {
   
         nodeEnter.append("circle")
             .attr("r", 10)
-            .attr("fill", d =>  d.data.code ? COLORS[d.data.code] : COLORS["Available"])
+            .attr("fill", d =>  d.data.type ? COLORS[d.data.type] : COLORS["Available"])
             .attr("fill-opacity", 0.8)
-            .attr("stroke", d =>  d.data.code ? COLORS[d.data.code] : COLORS["Available"])
+            .attr("stroke", d =>  d.data.type ? COLORS[d.data.type] : COLORS["Available"])
             .attr("stroke-width", 2)
             .attr("stroke-opacity", 1)
             .on("click", (event, d) => {
@@ -138,9 +138,11 @@ function Tree(data) {
             .text(d => d.data.name)
             .attr("fill", "#FFF")
             .attr("stroke-linejoin", "round")
-            .attr("stroke-width", 3)
+            .attr("stroke-width", 2)
             .attr("stroke", "#0B0C10")
             .attr("paint-order", "stroke")
+            .attr("text-decoration", "underline")
+            .attr("text-underline-position", "under")
             .each(wrap);
 
         nodeEnter
@@ -173,7 +175,7 @@ function Tree(data) {
   
         // Transition links to their new position.
         link.merge(linkEnter).transition(transition)
-            .attr("stroke", d => d.source.data.code ? COLORS[d.source.data.code] : "#EEE")
+            .attr("stroke", d => d.source.data.type ? COLORS[d.source.data.type] : "#EEE")
             .attr("d", diagonal);
   
         // Transition exiting nodes to the parent's new position.
@@ -204,5 +206,52 @@ function Tree(data) {
   
     return svg.node();
 }
+
+//Initialize legend
+const legendItemSize = 20;
+const legendSpacing = 4;
+const xOffset = 20;
+const yOffset = 12;
+const legend = d3
+    .select('#legend')
+    .append('svg')
+        .attr("height", "120")
+        .selectAll('.legendItem')
+        .data(Object.keys(COLORS).map(function (key) {
+            return [key, COLORS[key]]
+        }));
+
+//Create legend items
+legend
+    .enter()
+    .append('circle')
+    .attr('class', 'legendItem')
+    .attr("r", 10)
+    .attr("fill", d =>  d[1])
+    .attr("fill-opacity", 0.8)
+    .attr("stroke", d =>  d[1])
+    .attr("stroke-width", 2)
+    .attr("stroke-opacity", 1)
+    .attr('width', legendItemSize)
+    .attr('height', legendItemSize)
+    .style('fill', d => d[1])
+    .attr('transform',
+        (d, i) => {
+            var x = xOffset;
+            var y = yOffset + (legendItemSize + legendSpacing) * i;
+            return `translate(${x}, ${y})`;
+        }
+    );
+
+//Create legend labels
+legend
+    .enter()
+    .append('text')
+    .attr("dy", "-.38em")
+    .attr("fill", "#FFF")
+    .attr("style", "font: 16px sans-serif;")
+    .attr('x', xOffset + legendItemSize)
+    .attr('y', (d, i) => yOffset + (legendItemSize + legendSpacing) * i + 12)
+    .text(d => d[0]); 
 
 Tree(treeData)

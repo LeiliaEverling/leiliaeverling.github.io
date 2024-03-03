@@ -7,3 +7,9 @@ body {
     font-size: 10pt;
     font-family: sans-serif;
 }
+
+#legend {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+}
