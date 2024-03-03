@@ -241,7 +241,7 @@ export function Tree(data, MAX_DEPTH) {
     root.descendants().forEach((d, i) => {
         d.id = i;
         d._children = d.children;
-        if (chapter && !path_chapters.find(p_chapter => p_chapter == d.data.chapter)) d.children = null;
+        // if (chapter && !path_chapters.find(p_chapter => p_chapter == d.data.chapter)) d.children = null;
         if (chapter && path_chapters.find(p_chapter => p_chapter == d.data.chapter)) d.data.path = true;
     });
   
