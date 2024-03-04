@@ -13,7 +13,7 @@ export default {
             "work": 54207817,
             "chapter": 137264944,
             "decision": "Access FAQ Chapter",
-            "description": "Story FAQ",
+            "description": "The story FAQ page.",
             "rating": "General Audiences",
             "warnings": "None",
             "type": "Info",
@@ -26,10 +26,23 @@ export default {
             "work": 54207817,
             "chapter": 137328685,
             "decision": "Access Acknowledgements Chapter",
-            "description": "Story Acknowledgements",
+            "description": "The story acknowledgements page.",
             "rating": "General Audiences",
             "warnings": "None",
             "type": "Info",
+            "children": [
+                
+            ]
+        },
+        {
+            "name": "Kaguya-Sama: Love Is War",
+            "work": 54236815,
+            "chapter": 137344978,
+            "decision": "Launch Kaguya-Sama: Love Is War story",
+            "description": "A Kaguya-Sama: Love Is War choose your own adventure story.",
+            "rating": "General Audiences",
+            "warnings": "None",
+            "type": "Available",
             "children": [
                 
             ]
