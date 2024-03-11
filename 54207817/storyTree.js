@@ -22,6 +22,19 @@ export default {
             ]
         },
         {
+            "name": "Issue Log",
+            "work": 54207817,
+            "chapter": 137777953,
+            "decision": "Access Issue Log Chapter",
+            "description": "Ask for a chapter to be fixed if something is broken.",
+            "rating": "General Audiences",
+            "warnings": "None",
+            "type": "Info",
+            "children": [
+                
+            ]
+        },
+        {
             "name": "Acknowledgements",
             "work": 54207817,
             "chapter": 137328685,
